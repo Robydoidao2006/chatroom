@@ -1,0 +1,102 @@
+{{!-- header --}}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<div class="container" id="header">
+    <div class="row">
+        <div class="col-xs-12 text-center" id="top-bar">
+            <h1>Welcome to the chat group</h1>
+        </div>
+    </div>
+</div>
+{{!-- scrollbox holding the conversation --}}
+<div class="myBox">
+    <div class="col-xs-6 text-center" class="task">
+        <div class="row">
+            {{#each Chatroom_data}}
+                {{#unless this.devoured}}
+                    <div class="col-xs-6" id="text-box">
+                        <pre> {{this.chatroom_name}} </pre>
+                            <form method="POST" action="/chatrooms/update?_method=PUT" class="button-size">
+                                <input type="hidden" name="chatroom_id" type="text" value="{{this.id}}">
+                                    <button type="submit" class="btn btn-default" id="delete-button">x</button>
+                            </form>
+                    </div>
+                {{/unless}}
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+{{!-- user input container --}}
+<div class="container">
+    <div class="row">
+        <div class="col-xs-6 text-center enter_section">
+            <form action="/chatrooms/create" method="POST">
+                <input type="text" name="chatroom_name" class="form-control"value="" placeholder=" Say hello" id="enter_text">
+                    
+                    
+                    {{!-- emojis dropdown menu --}}
+                    
+                    
+                    <div class="dropdown">
+                        <button class="dropbtn" id="emojis"><img src="/assets/images/emoji.png"></button>
+                            <div class="dropdown-content">
+                                
+                                
+                                
+                                
+                                <a href="#" id="lmao"><img alt="lmao" src="/assets/images/emojis/1.png"></a>
+
+
+
+
+
+
+
+
+                                {{!-- <a href="#" title="crap"><img alt="crap" src="/assets/images/emojis/2.png"></a> --}}
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                {{!-- <a href="#" title="fuck"><img alt="fuck" src="/assets/images/emojis/3.png"></a>
+                                <a href="#" title="scary"><img alt="scary" src="/assets/images/emojis/4.png"></a>
+                                <a href="#" title="kiss"><img alt="kiss" src="/assets/images/emojis/5.png"></a>
+                                <a href="#" title="damn girl"><img alt="damn girl" src="/assets/images/emojis/6.png"></a>
+                                <a href="#" title="holy shit"><img alt="holy shit" src="/assets/images/emojis/7.png"></a>
+                                <a href="#" title="shit"><img alt="shit" src="/assets/images/emojis/8.png"></a>
+                                <a href="#" title="vomit"><img alt="vomit" src="/assets/images/emojis/9.png"></a>  --}}
+                            </div>
+                    </div>
+                    {{!-- end of emoji dropdown menu  --}}
+
+
+
+
+
+                <button type="submit" class="btn btn-primary" id="text-enter-button">Send</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+     
+{{!-- social media icons --}}
+<div class="icon">
+    <a href="https://www.facebook.com"  target="_blank"><img src="/assets/images/facebook.png" style="padding-right: 15px;"></a>     
+    <a href="https://www.youtube.com/" target="_blank"><img src="/assets/images/youtube.png"style="padding-right: 15px;"></a> 
+    <a href="https://www.instagram.com/" target="_blank"><img src="/assets/images/instagram.png"style="padding-right: 15px;"></a>  
+    <a href="https://twitter.com/" target="_blank"><img src="/assets/images/twitter.png"></a>      
+</div>
+
+
+    
+            <p class="copy">ChatRoom is a trade mark of UCF™ all Rights reserved</p> 
+            
+
+
+
+           

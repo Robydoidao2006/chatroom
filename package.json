@@ -1,0 +1,19 @@
+{
+  "name": "ChatRoom",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "4.13.3",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.10",
+    "mysql": "^2.15.0",
+    "nodemon": "^1.17.2"
+  },
+  "author": "Robert Fialho",
+  "license": "ISC",
+  "main": "server.js"
+}
